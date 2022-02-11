@@ -2,11 +2,11 @@
 
 ## Install
 
-```bash
+```
 cd vector-hermes
 ```
 
-```bash
+```
 docker run \
   --rm \
   -v "/$(pwd)/etc/vector:/etc/vector" \
@@ -17,7 +17,7 @@ docker run \
 
 ## Log Ingestion
 
-```bash
+```
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{
@@ -43,4 +43,6 @@ curl --header "Content-Type: application/json" \
 
 ## Apache Bench
 
+```
 ab -n 10000 -c 200 -p data.json -T application/json http://127.0.0.1:3000/
+```
