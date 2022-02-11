@@ -49,7 +49,7 @@ ab -n 100 -c 10 -p data.json -T application/json http://127.0.0.1:3000/
 
 ## ClickHouse Web UI
 
-Web UI can be accessed here (http://localhost:8123/play)[http://localhost:8123/play]
+Web UI can be accessed here [http://localhost:8123/play](http://localhost:8123/play)
 
 Create Database
 
