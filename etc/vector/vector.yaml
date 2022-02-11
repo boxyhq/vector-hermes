@@ -1,0 +1,15 @@
+data_dir: /var/lib/vector
+
+sources:
+  my_source_id:
+    type: http
+    address: 0.0.0.0:3000
+    encoding: json
+
+sinks:
+  console-output:
+    type: console
+    inputs:
+      - my_source_id
+    target: stdout
+    encoding: json
