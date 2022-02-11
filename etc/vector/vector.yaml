@@ -13,3 +13,14 @@ sinks:
       - my_source_id
     target: stdout
     encoding: json
+
+  clickhouse-output:
+    type: clickhouse
+    inputs:
+      - my_source_id
+    database: hermes
+    endpoint: http://clickhouse:8123
+    table: auditlogs
+    compression: gzip
+    healthcheck: false
+    skip_unknown_fields: true

@@ -1,0 +1,25 @@
+version: "3"
+
+networks:
+  hermes:
+
+services:
+  clickhouse:
+    image: yandex/clickhouse-server
+    ports:
+      - "8123:8123"
+    volumes:
+      - ./db:/var/lib/clickhouse
+    networks:
+      - hermes
+
+  vector:
+    build: ./
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./etc/vector:/etc/vector
+    networks:
+      - hermes
+    links:
+      - clickhouse
