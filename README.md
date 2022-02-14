@@ -40,7 +40,8 @@ CREATE TABLE hermes.auditlogs
    action String,
    action_type String,
    name String,
-   description String
+   description String,
+   metadata Map(String, String) // Metadata
 ) ENGINE = Log
 ```
 
@@ -69,8 +70,8 @@ curl --header "Content-Type: application/json" \
       "name":"user.login",
       "description":"This is a login event",
       "metadata":{
-         "foo":"bar",
-         "hey":"you"
+         "key-1":"value-1",
+         "key-2":"value-2"
       }
     }' \
   http://127.0.0.1:3000
